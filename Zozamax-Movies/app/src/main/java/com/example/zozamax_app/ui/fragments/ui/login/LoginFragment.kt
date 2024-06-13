@@ -15,9 +15,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import com.example.zozamax_app.R
 import com.example.zozamax_app.databinding.FragmentLoginBinding
 
-import com.example.zozamax_app.ui.fragments.R
 
 class LoginFragment : Fragment() {
 
