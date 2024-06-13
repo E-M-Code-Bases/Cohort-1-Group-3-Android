@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
+import com.example.zozamax_app.R
 import com.example.zozamax_app.ui.fragments.data.LoginRepository
 import com.example.zozamax_app.ui.fragments.data.Result
 
-import com.example.zozamax_app.ui.fragments.R
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 
