@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/home"
+        android:title="Movies"
+        />
+    <item
+        android:id="@+id/nowPlaying"
+        android:title="Now Playing"
+        />
+    <item
+        android:id="@+id/popular"
+        android:title="Popular"
+        />
+    <item
+        android:id="@+id/upcoming"
+        android:title="Upcoming"
+        />
+    <item
+        android:id="@+id/topRated"
+        android:title="Top Rated"
+        />
+    <item
+        android:id="@+id/support"
+        android:title="Support"
+        />
+
+    <item
+        android:id="@+id/privacypolicy"
+        android:title="Privacy policy"
+        />
+    <item
+        android:id="@+id/aboutUs"
+        android:title="About"
+
+        />
+    <item
+        android:id="@+id/logout"
+        android:title="Logout"
+
+
+        />
+
+
+
+
+
+</menu>

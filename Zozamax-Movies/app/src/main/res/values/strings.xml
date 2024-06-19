@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Zozamax_app</string>
+    <string name="app_name">Zozamax Arena</string>
     <!-- Strings related to login -->
     <string name="prompt_username">Username</string>
     <string name="prompt_email">Email</string>
@@ -54,4 +54,6 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
