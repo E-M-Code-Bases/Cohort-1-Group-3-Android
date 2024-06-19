@@ -10,19 +10,20 @@ import android.widget.MediaController
 import android.widget.VideoView
 import androidx.fragment.app.Fragment
 import com.example.zozamax_app.R
-import com.example.zozamax_app.databinding.FragmentTrailerBinding
+import com.example.zozamax_app.databinding.FragmentMovieBinding
 
 
-class TrailerFragment : Fragment() {
 
-    private var _binding: FragmentTrailerBinding? = null
+class MovieFragment : Fragment() {
+
+    private var _binding: FragmentMovieBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentTrailerBinding.inflate(inflater, container, false)
+        _binding = FragmentMovieBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -30,8 +31,8 @@ class TrailerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Set up the VideoView
-        val videoView: VideoView = binding.trailerVideo
-        val videoUri: Uri = Uri.parse("android.resource://" + requireActivity().packageName + "/" + R.raw.trailer)
+        val videoView: VideoView = binding.movie
+        val videoUri: Uri = Uri.parse("android.resource://" + requireActivity().packageName + "/" + R.raw.movie)
 
         videoView.setVideoURI(videoUri)
         videoView.setMediaController(MediaController(requireContext()))
@@ -44,4 +45,3 @@ class TrailerFragment : Fragment() {
         _binding = null
     }
 }
-

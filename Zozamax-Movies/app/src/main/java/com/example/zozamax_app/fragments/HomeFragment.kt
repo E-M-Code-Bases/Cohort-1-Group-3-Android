@@ -5,33 +5,39 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import com.example.zozamax_app.databinding.FragmentHomeBinding
-
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
-
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        val listFragment = ListFragment()
+        childFragmentManager.beginTransaction().apply {
+            replace(binding.list.id, listFragment)
+            addToBackStack(null)
+            commit()
+        }
+
+        val trailerFragment = TrailerFragment()
+        childFragmentManager.beginTransaction().apply {
+            replace(binding.trailer.id, trailerFragment)
+            addToBackStack(null)
+            commit()
+        }
+        val movieFragment = MovieFragment()
+        childFragmentManager.beginTransaction().apply {
+            replace(binding.movie.id, movieFragment)
+            addToBackStack(null)
+            commit()
+        }
+
         return binding.root
-
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
