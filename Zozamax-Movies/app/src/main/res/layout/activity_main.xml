@@ -148,7 +148,6 @@
             android:background="@color/red"
             android:textAlignment="center"/>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -159,6 +158,7 @@
         app:menu="@menu/navigation_menu"
         app:itemTextColor="@color/black"
         android:background="@color/grey"/>
+
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

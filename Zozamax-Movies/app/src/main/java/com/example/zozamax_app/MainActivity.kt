@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home->{
                     true
                 }
-            R.id.nav_movies->{
+            R.id.nav_favorites->{
                 true
             }
             R.id.nav_settings->{
