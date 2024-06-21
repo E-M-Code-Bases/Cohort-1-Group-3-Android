@@ -65,4 +65,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation ("com.airbnb.android:lottie:5.2.0")
+    //Transformation layout dependency
+    implementation ("com.github.skydoves:transformationlayout:1.1.2")
 }
