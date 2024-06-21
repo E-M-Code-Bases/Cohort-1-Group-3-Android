@@ -6,7 +6,7 @@ import retrofit2.Response
 
 class PopularMovierepo() {
     suspend fun getPopulaMovies(): Response<MovieApiResponse> {
-   val retrofit = AppModule().getRetrofitInstance()
+        val retrofit = AppModule().getRetrofitInstance()
         return retrofit.getPopularMovies()
     }
 }
