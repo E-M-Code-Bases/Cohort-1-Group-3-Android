@@ -1,9 +1,7 @@
 package com.example.zozamax_app.adapters
 
 import android.content.Context
-import android.renderscript.ScriptGroup.Binding
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView

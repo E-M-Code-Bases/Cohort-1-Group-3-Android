@@ -15,9 +15,7 @@
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_movieTestFragment"
-            app:destination="@id/movieTestFragment" />
+
     </fragment>
 
     <fragment
