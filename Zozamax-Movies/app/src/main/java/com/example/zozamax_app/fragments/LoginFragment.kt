@@ -10,7 +10,6 @@ import androidx.navigation.findNavController
 import com.example.zozamax_app.R
 import com.example.zozamax_app.databinding.FragmentLoginBinding
 
-
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
@@ -20,18 +19,22 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         binding = FragmentLoginBinding.inflate(inflater, container, false)
 
-        binding.login.setOnClickListener{
+        binding.login.setOnClickListener {
+
             val navController = binding.login.findNavController()
-            navController.navigate(R.id.action_loginFragment_to_homeFragment)
-            Toast.makeText(requireContext(), "login successful", Toast.LENGTH_LONG).show()
+            navController.navigate(R.id.action_loginFragment_to_movieTestFragment)
+            Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_LONG).show()
         }
-        binding.signup.setOnClickListener{
+
+        binding.signup.setOnClickListener {
             val navController = binding.signup.findNavController()
             navController.navigate(R.id.action_loginFragment_to_registerFragment)
+            Toast.makeText(requireContext(), "Registered successfully", Toast.LENGTH_LONG).show()
         }
+
         return binding.root
     }
 }
+
