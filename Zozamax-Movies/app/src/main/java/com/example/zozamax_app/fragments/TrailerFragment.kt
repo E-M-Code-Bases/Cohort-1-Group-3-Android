@@ -15,14 +15,13 @@ import com.example.zozamax_app.databinding.FragmentTrailerBinding
 
 class TrailerFragment : Fragment() {
 
-    private var _binding: FragmentTrailerBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentTrailerBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentTrailerBinding.inflate(inflater, container, false)
+    ): View {
+        binding = FragmentTrailerBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -37,11 +36,6 @@ class TrailerFragment : Fragment() {
         videoView.setMediaController(MediaController(requireContext()))
         videoView.requestFocus()
         videoView.start()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
 
