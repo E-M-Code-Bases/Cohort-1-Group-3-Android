@@ -22,7 +22,7 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.login.setOnClickListener {
-            // Navigate to MovieTestFragment on successful login
+
             val navController = binding.login.findNavController()
             navController.navigate(R.id.action_loginFragment_to_movieTestFragment)
             Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_LONG).show()

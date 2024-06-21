@@ -3,7 +3,8 @@ package com.example.zozamax_app.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.zozamax_app.api_services.Movie
+import com.example.zozamax_app.api_services.MoviesAdapter
+import com.example.zozamax_app.data.Movie
 import com.example.zozamax_app.databinding.ItemMovieBinding
 
 class MoviesAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
@@ -21,7 +22,7 @@ class MoviesAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<Movi
 
     override fun getItemCount() = sortedMovies.size
 
-    class MovieViewHolder(private val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {
+    class MovieViewHolder(val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: Movie) {
             binding.movie = movie
             binding.executePendingBindings() // This will force the binding to execute immediately

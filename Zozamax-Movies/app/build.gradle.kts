@@ -56,14 +56,11 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
 
     // Moshi dependencies
-    implementation("com.squareup.moshi:moshi:1.15.0")
-    implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation(libs.androidx.navigation.ui.ktx)
-    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.15.0")
 
     // Retrofit dependencies
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

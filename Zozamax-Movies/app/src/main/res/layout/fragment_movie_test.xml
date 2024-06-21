@@ -5,7 +5,7 @@
     <data>
         <variable
             name="movie"
-            type="com.example.zozamax_app.api_services.Movie" />
+            type="com.example.zozamax_app.data.Movie" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
