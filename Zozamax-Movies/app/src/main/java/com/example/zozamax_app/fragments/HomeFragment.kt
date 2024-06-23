@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
 import androidx.recyclerview.widget.RecyclerView.Orientation
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.example.zozamax_app.adapters.MovieAdapter
 import com.example.zozamax_app.adapters.items
 import com.example.zozamax_app.databinding.FragmentHomeBinding
+import com.example.zozamax_app.viewmodel.PopularViewModel
 
 class HomeFragment : Fragment() {
 
@@ -27,6 +29,9 @@ class HomeFragment : Fragment() {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        val productViewModel: PopularViewModel by viewModels {
+            ProductProvider(repo)
+        }
 
         val trailerFragment = TrailerFragment()
         childFragmentManager.beginTransaction().apply {

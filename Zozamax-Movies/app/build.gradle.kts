@@ -69,4 +69,6 @@ dependencies {
     implementation ("com.airbnb.android:lottie:5.2.0")
     //Transformation layout dependency
     implementation ("com.github.skydoves:transformationlayout:1.1.2")
+
+    implementation ("com.google.android.material:material:1.4.0")
 }
