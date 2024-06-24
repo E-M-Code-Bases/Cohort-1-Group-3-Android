@@ -20,7 +20,11 @@ interface ApiService {
         @Query("sort_by") sortBy: String = "created_at.asc"
     ): Response<MovieApiResponse>
 
-    suspend fun getPopularMovies(): Response<MovieApiResponse>
+    @GET("movie/popular")
+    suspend fun getPopularMovies(
+        @Query("language") language: String="en-US",
+        @Query("page") page: Int =1
+    ): Response<MovieApiResponse>
 }
 
 
