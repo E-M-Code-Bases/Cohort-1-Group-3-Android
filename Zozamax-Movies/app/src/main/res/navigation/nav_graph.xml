@@ -28,4 +28,12 @@
         android:id="@+id/homeFragment"
         android:name="com.example.zozamax_app.fragments.HomeFragment"
         android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.zozamax_app.fragments.ListFragment"
+        android:label="ListFragment" >
+        <action
+            android:id="@+id/action_listFragment_to_movieFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
