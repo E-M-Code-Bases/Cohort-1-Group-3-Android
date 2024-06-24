@@ -31,8 +31,7 @@ class TrailerFragment : Fragment() {
 
         // Set up the VideoView
         val videoView: VideoView = binding.trailerVideo
-       // val videoUri: Uri = Uri.parse("android.resource://" + requireActivity().packageName + "/" + R.raw.trailer)
-        val videoUri: Uri = Uri.parse("https://www.wootly.ch/?v=U7MAEEE4")
+        val videoUri: Uri = Uri.parse("android.resource://" + requireActivity().packageName + "/" + R.raw.trailer)
 
         videoView.setVideoURI(videoUri)
         videoView.setMediaController(MediaController(requireContext()))
@@ -45,3 +44,4 @@ class TrailerFragment : Fragment() {
         _binding = null
     }
 }
+
