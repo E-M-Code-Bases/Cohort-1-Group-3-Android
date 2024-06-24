@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     kotlin("kapt") // Add this line
     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
+    id ("kotlin-parcelize")
 }
 
 android {
@@ -65,4 +66,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation ("com.airbnb.android:lottie:5.2.0")
+    //Transformation layout dependency
+    implementation ("com.github.skydoves:transformationlayout:1.1.2")
+
+    implementation ("com.google.android.material:material:1.4.0")
 }
