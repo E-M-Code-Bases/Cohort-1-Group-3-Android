@@ -19,7 +19,7 @@ import com.example.zozamax_app.util.BASE_URL
 import com.squareup.picasso.Picasso
 
 private const val TAG = "movies"
-class MovieAdapter(private val movies:List<Result>,val cont: Context): RecyclerView.Adapter<MovieAdapter.MyHolder>() {
+class  MovieAdapter(private val movies:List<Result>,val cont: Context): RecyclerView.Adapter<MovieAdapter.MyHolder>() {
     private var layoutType: Int? = null
 
     inner class MyHolder(val binding: ViewBinding): RecyclerView.ViewHolder(binding.root) {
