@@ -9,4 +9,5 @@ class PopularMovieRepo() {
         val retrofit = AppModule().getRetrofitInstance()
         return retrofit.getPopularMovies()
     }
+
 }

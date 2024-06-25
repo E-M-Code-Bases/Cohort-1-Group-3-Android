@@ -19,7 +19,7 @@ import com.skydoves.transformationlayout.onTransformationStartContainer
 
 private const val TAG = "popularMovies"
 
-class HomeFragment : Fragment() {
+class  HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
 
