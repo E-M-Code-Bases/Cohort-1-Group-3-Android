@@ -57,20 +57,22 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
 
     // Moshi dependencies
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation(libs.converter.gson)
     implementation(libs.androidx.navigation.ui.ktx)
 
     // Retrofit dependencies
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation(libs.retrofit)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation ("com.airbnb.android:lottie:5.2.0")
-    //Transformation layout dependency
-    implementation ("com.github.skydoves:transformationlayout:1.1.2")
+    implementation (libs.lottie)
 
-    implementation ("com.google.android.material:material:1.4.0")
-    implementation ("com.squareup.picasso:picasso:2.8")
+    implementation (libs.transformationlayout)
+
+    implementation (libs.material.v140)
+
+    implementation (libs.androidx.drawerlayout)
+    implementation (libs.androidx.recyclerview)
 }
