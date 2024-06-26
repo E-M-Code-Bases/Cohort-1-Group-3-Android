@@ -72,4 +72,6 @@ dependencies {
     implementation ("com.github.skydoves:transformationlayout:1.1.2")
 
     implementation ("com.google.android.material:material:1.4.0")
+
+    implementation ("com.squareup.picasso:picasso:2.8")
 }

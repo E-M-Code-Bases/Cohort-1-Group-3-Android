@@ -10,22 +10,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
-import androidx.recyclerview.widget.RecyclerView.Orientation
-import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.example.zozamax_app.adapters.MovieAdapter
-import com.example.zozamax_app.adapters.items
 import com.example.zozamax_app.databinding.FragmentHomeBinding
 import com.example.zozamax_app.repository.PopularMovieRepo
 import com.example.zozamax_app.viewmodel.PopularModelProvider
 import com.example.zozamax_app.viewmodel.PopularViewModel
 import com.skydoves.transformationlayout.onTransformationStartContainer
-import kotlin.math.log
 
 private const val TAG = "popularMovies"
 
-class HomeFragment : Fragment() {
+class  HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
 
@@ -52,31 +46,29 @@ class HomeFragment : Fragment() {
         productViewModel.popularMovies.observe(viewLifecycleOwner, Observer { movies ->
             // Update UI with the list of movies
             Log.d(TAG, "popular movies -> $movies")
+            if(movies.isNotEmpty()){
+                binding.recView.apply {
+                    // layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
+                    layoutManager = GridLayoutManager(requireContext(), 2)
+                    adapter = MovieAdapter(movies, requireContext())
+                    setHasFixedSize(true)
+                }
+            }
         })
 
-        val trailerFragment = TrailerFragment()
-        childFragmentManager.beginTransaction().apply {
-            replace(binding.trailer.id, trailerFragment)
-            addToBackStack(null)
-            commit()
-        }
+//        val trailerFragment = TrailerFragment()
+//        childFragmentManager.beginTransaction().apply {
+//            replace(binding.trailer.id, trailerFragment)
+//            addToBackStack(null)
+//            commit()
+//        }
 
-        val listFragment = ListFragment()
-        childFragmentManager.beginTransaction().apply {
-            replace(binding.list.id, listFragment)
-            addToBackStack(null)
-            commit()
-        }
-
-        val movies = items().listMovies
-
-        // initialising the recycler view
-        binding.recView.apply {
-           // layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
-            layoutManager = GridLayoutManager(requireContext(), 2)
-            adapter = MovieAdapter(movies, requireContext())
-            setHasFixedSize(true)
-        }
+//        val listFragment = ListFragment()
+//        childFragmentManager.beginTransaction().apply {
+//            replace(binding.list.id, listFragment)
+//            addToBackStack(null)
+//            commit()
+//        }
 
         return binding.root
     }
