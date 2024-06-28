@@ -31,13 +31,13 @@ class Movie1Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Set up the VideoView
-        val videoView: VideoView = binding.movie1
-        val videoUri: Uri = Uri.parse("android.resource://" + requireActivity().packageName + "/" + R.raw.movie1)
-
-        videoView.setVideoURI(videoUri)
-        videoView.setMediaController(MediaController(requireContext()))
-        videoView.requestFocus()
-        videoView.start()
+        ///val videoView: VideoView = binding.movie1
+//        val videoUri: Uri = Uri.parse("android.resource://" + requireActivity().packageName + "/" + R.raw.movie1)
+//
+//        videoView.setVideoURI(videoUri)
+//        videoView.setMediaController(MediaController(requireContext()))
+//        videoView.requestFocus()
+//        videoView.start()
     }
 
     override fun onDestroyView() {
