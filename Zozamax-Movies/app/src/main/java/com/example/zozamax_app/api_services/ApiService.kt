@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 
 
-interface ApiService {
+interface  ApiService {
     @GET("3/account/21323729/rated/movies")
     @Headers(
         "accept: application/json",
