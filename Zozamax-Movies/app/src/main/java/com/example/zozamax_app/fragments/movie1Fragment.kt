@@ -11,7 +11,6 @@ import android.widget.VideoView
 import androidx.fragment.app.Fragment
 import com.example.zozamax_app.R
 import com.example.zozamax_app.databinding.FragmentMovie1Binding
-import com.example.zozamax_app.databinding.FragmentMovieBinding
 
 
 
