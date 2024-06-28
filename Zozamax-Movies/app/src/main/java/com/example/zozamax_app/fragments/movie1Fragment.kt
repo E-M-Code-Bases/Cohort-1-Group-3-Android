@@ -23,7 +23,7 @@ class Movie1Fragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View? {        
         _binding = FragmentMovie1Binding.inflate(inflater, container, false)
         return binding.root
     }
@@ -32,13 +32,13 @@ class Movie1Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Set up the VideoView
-        val videoView: VideoView = binding.movie1
-        val videoUri: Uri = Uri.parse("android.resource://" + requireActivity().packageName + "/" + R.raw.movie1)
+        //val videoView: VideoView = binding.movie1
+        //val videoUri: Uri = Uri.parse("android.resource://" + requireActivity().packageName + "/" + R.raw.movie1)
 
-        videoView.setVideoURI(videoUri)
-        videoView.setMediaController(MediaController(requireContext()))
-        videoView.requestFocus()
-        videoView.start()
+        //videoView.setVideoURI(videoUri)
+        //videoView.setMediaController(MediaController(requireContext()))
+        //videoView.requestFocus()
+        //videoView.start()
     }
 
     override fun onDestroyView() {
