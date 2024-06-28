@@ -12,7 +12,8 @@ import com.example.zozamax_app.data.Result
 import com.example.zozamax_app.databinding.MovieRecBinding
 import com.example.zozamax_app.databinding.MovieRightBinding
 import com.example.zozamax_app.util.BASE_URL
-import com.squareup.picasso.Picasso
+import com.example.zozamax_app.util.IMAGE_URL
+import com.squareup.picasso.Picasso;
 
 private const val TAG = "movies"
 class  MovieAdapter(private val movies:List<Result>,val cont: Context): RecyclerView.Adapter<MovieAdapter.MyHolder>() {
@@ -23,33 +24,33 @@ class  MovieAdapter(private val movies:List<Result>,val cont: Context): Recycler
             when (binding) {
                 is MovieRecBinding -> {
                     binding.title.text = model.title
-                    binding.description.text = model.overview
+                    binding.description.text = "Watch date: ${model.release_date}"
 
                     binding.transformationLayout.transitionName = model.title
                     if(model.poster_path.isNotEmpty()){
-                        Picasso.get().load(model.poster_path).into(binding.logo)
+                        Picasso.get().load(IMAGE_URL+model.poster_path).into(binding.logo)
                     }
 
                     binding.root.setOnClickListener{
                         val navCont = binding.root.findNavController()
-                        navCont.navigate(R.id.action_homeFragment_to_movieFragment)
+                        navCont.navigate(R.id.action_movie1Fragment_to_movieFragment)
 
                     }
                 }
                 is MovieRightBinding -> {
                     binding.title.text = model.title
-                    binding.description.text = model.overview
+                    binding.description.text = "Watch date: ${model.release_date}"
 
                     binding.transformationLayout.transitionName = model.title
 
                     if(model.poster_path.isNotEmpty()){
                         Log.d(TAG, model.poster_path)
 
-                        Picasso.get().load(BASE_URL+model.poster_path).into(binding.logo)
+                        Picasso.get().load(IMAGE_URL+model.poster_path).into(binding.logo)
                     }
                     binding.root.setOnClickListener{
                         val navCont = binding.root.findNavController()
-                        navCont.navigate(R.id.action_homeFragment_to_movieFragment)
+                        navCont.navigate(R.id.action_movie1Fragment_to_movieFragment)
 
                     }
                 }
