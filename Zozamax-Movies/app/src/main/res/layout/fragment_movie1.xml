@@ -67,6 +67,20 @@ xmlns:android="http://schemas.android.com/apk/res/android">
         app:layout_constraintTop_toBottomOf="@id/welcome"
         />
 
+    <TextView
+        android:id="@+id/movieTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Popular movies"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slogan"
+        />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
         class="androidx.navigation.fragment.NavHostFragment"
@@ -74,7 +88,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
         android:layout_height="0dp"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_drawer"
-        app:layout_constraintTop_toBottomOf="@id/slogan"
+        app:layout_constraintTop_toBottomOf="@id/movieTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
