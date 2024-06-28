@@ -23,7 +23,7 @@ class LoginFragment : Fragment() {
 
         binding.login.setOnClickListener {
             val navController = binding.login.findNavController()
-            navController.navigate(R.id.action_loginFragment_to_homeFragment)
+            navController.navigate(R.id.action_loginFragment_to_movie1Fragment)
             Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_LONG).show()
         }
 

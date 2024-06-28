@@ -21,7 +21,7 @@ class RegisterFragment : Fragment() {
 
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
         binding.signup.setOnClickListener{
-            binding.signup.findNavController().navigate(R.id.action_registerFragment_to_homeFragment)
+            binding.signup.findNavController().navigate(R.id.action_registerFragment_to_movie1Fragment)
         }
 
         return binding.root
