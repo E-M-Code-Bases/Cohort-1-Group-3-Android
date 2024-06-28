@@ -55,21 +55,7 @@ class  HomeFragment : Fragment() {
                 }
             }
         })
-
-//        val trailerFragment = TrailerFragment()
-//        childFragmentManager.beginTransaction().apply {
-//            replace(binding.trailer.id, trailerFragment)
-//            addToBackStack(null)
-//            commit()
-//        }
-
-//        val listFragment = ListFragment()
-//        childFragmentManager.beginTransaction().apply {
-//            replace(binding.list.id, listFragment)
-//            addToBackStack(null)
-//            commit()
-//        }
-
+        
         return binding.root
     }
 }
