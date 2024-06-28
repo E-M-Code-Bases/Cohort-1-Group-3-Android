@@ -67,6 +67,8 @@ xmlns:android="http://schemas.android.com/apk/res/android">
         app:layout_constraintTop_toBottomOf="@id/welcome"
         />
 
+
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
         class="androidx.navigation.fragment.NavHostFragment"
