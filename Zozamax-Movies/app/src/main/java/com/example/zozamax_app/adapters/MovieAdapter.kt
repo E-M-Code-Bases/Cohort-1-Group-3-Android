@@ -37,7 +37,7 @@ class  MovieAdapter(private val movies:List<Result>,val cont: Context): Recycler
 
                     binding.root.setOnClickListener{
                         val navCont = binding.root.findNavController()
-                        navCont.navigate(R.id.action_movie1Fragment_to_movieFragment)
+                        navCont.navigate(R.id.action_homeFragment_to_movieFragment)
 
                     }
                 }
@@ -54,7 +54,7 @@ class  MovieAdapter(private val movies:List<Result>,val cont: Context): Recycler
                     }
                     binding.root.setOnClickListener{
                         val navCont = binding.root.findNavController()
-                        navCont.navigate(R.id.action_movie1Fragment_to_movieFragment)
+                        navCont.navigate(R.id.action_homeFragment_to_movieFragment)
 
                     }
                 }
