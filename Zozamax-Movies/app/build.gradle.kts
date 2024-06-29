@@ -4,6 +4,7 @@ plugins {
     kotlin("kapt") // Add this line
     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
     id ("kotlin-parcelize")
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 android {
