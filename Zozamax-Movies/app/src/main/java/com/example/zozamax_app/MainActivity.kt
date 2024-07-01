@@ -10,9 +10,16 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.zozamax_app.fragments.SingleMovieFragment
 import com.google.android.material.navigation.NavigationView
 import androidx.viewpager2.widget.ViewPager2
+import com.example.zozamax_app.fragments.NowPlayingFragment
+import com.example.zozamax_app.fragments.PopularMoviesFragment
+import com.example.zozamax_app.fragments.TopRatedFragment
+import com.example.zozamax_app.fragments.UpcomingMoviesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -103,10 +110,11 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter=adapter
         TabLayoutMediator(tabLayout,viewPager){
             tab, position->
-            tab.text="Tab${position+1}"
+            tab.text = adapter.getPageTitle(position)
         }.attach()
 
     }
+
     private fun setupBottomNavigationView(){
         bottomNavigationView.setOnNavigationItemSelectedListener {
             item-> when(item.itemId){
@@ -126,7 +134,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupSurfaceView(){
         surfaceView.holder.addCallback(object: SurfaceHolder.Callback{
             override fun surfaceCreated(holder: SurfaceHolder) {
-                TODO("Not yet implemented")
+                playTrailer()
             }
 
             override fun surfaceChanged(
@@ -135,11 +143,11 @@ class MainActivity : AppCompatActivity() {
                 width: Int,
                 height: Int
             ) {
-                TODO("Not yet implemented")
+               pauseTrailer()
             }
 
             override fun surfaceDestroyed(holder: SurfaceHolder) {
-                TODO("Not yet implemented")
+               pauseTrailer()
             }
         })
     }
