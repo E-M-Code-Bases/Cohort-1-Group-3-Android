@@ -52,5 +52,17 @@
         android:name="com.example.zozamax_app.fragments.MovieFragment"
         android:label="fragment_movie"
         tools:layout="@layout/fragment_movie" />
+    <fragment
+        android:id="@+id/UpcomingFragment"
+        android:name="com.example.zozamax_app.fragments.UpcomingFragment"
+        android:label="UpcomingFragment"
+        tools:layout="@layout/fragment_movie1">
+        <argument
+            android:name="videoUri"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_movie1Fragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+    </fragment>
 </navigation>
 

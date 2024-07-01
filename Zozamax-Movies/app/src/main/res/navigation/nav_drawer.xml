@@ -11,4 +11,10 @@
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 
+    <fragment
+        android:id="@+id/UpcomingFragment"
+        android:name="com.example.zozamax_app.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
 </navigation>
