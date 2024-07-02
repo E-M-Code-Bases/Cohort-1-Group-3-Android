@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val statusBar = window
+        statusBar.statusBarColor = this.getColor(R.color.red)
+        }
     }
 
-}
+

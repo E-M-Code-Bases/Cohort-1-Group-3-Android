@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zozamax_app.adapters.MovieAdapter
 import com.example.zozamax_app.databinding.FragmentHomeBinding
 import com.example.zozamax_app.databinding.FragmentUpcomingBinding
@@ -25,6 +26,7 @@ private const val TAG = "popularMovies"
 class  UpcomingFragment : Fragment() {
 
     private lateinit var binding: FragmentUpcomingBinding
+    private var _binding: FragmentUpcomingBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +49,6 @@ class  UpcomingFragment : Fragment() {
                  }
 
         productViewModel.upcomingMovies.observe(viewLifecycleOwner, Observer { movies ->
-            // Update UI with the list of movies
             Log.d(TAG, "Upcoming movies -> $movies")
             if(movies.isNotEmpty()){
                 binding.recView.apply {
@@ -60,5 +61,12 @@ class  UpcomingFragment : Fragment() {
         })
 
         return binding.root
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        super.onDestroyView()
+        _binding = null
     }
 }

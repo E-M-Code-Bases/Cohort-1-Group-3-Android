@@ -44,7 +44,6 @@ class  HomeFragment : Fragment() {
         }
 
         productViewModel.popularMovies.observe(viewLifecycleOwner, Observer { movies ->
-            // Update UI with the list of movies
             Log.d(TAG, "popular movies -> $movies")
             if(movies.isNotEmpty()){
                 binding.recView.apply {
