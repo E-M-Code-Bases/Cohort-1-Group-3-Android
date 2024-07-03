@@ -10,6 +10,14 @@
         android:name="com.example.zozamax_app.fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/TopFragment"
+        android:name="com.example.zozamax_app.fragments.TopFragment"
+        android:label="Top Rated"
+        />
+    <action
+        android:id="@+id/action_homeFragment_to_TopFragment"
+        app:destination="@id/TopFragment"/>
 
     <fragment
         android:id="@+id/UpcomingFragment"

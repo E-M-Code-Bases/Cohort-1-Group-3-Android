@@ -13,7 +13,6 @@ import com.example.zozamax_app.R
 import com.example.zozamax_app.databinding.FragmentMovie1Binding
 
 
-
 class Movie1Fragment : Fragment() {
 
     private lateinit var binding: FragmentMovie1Binding
@@ -31,6 +30,26 @@ class Movie1Fragment : Fragment() {
         binding.navView.setupWithNavController(navHostFragment.navController)
         binding.navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
+
+                R.id.toprated -> {
+                    navController.navigate(R.id.TopFragment)
+                    true
+                }
+
+                else -> false
+            }
+
+        }
+
+        binding.image.setOnClickListener {
+            binding.drawerNav.openDrawer(GravityCompat.START)
+        }
+
+        return binding.root
+    }
+}
+
+
                 R.id.upcoming -> {
                     navController.navigate(R.id.UpcomingFragment)
                     true
@@ -49,3 +68,4 @@ class Movie1Fragment : Fragment() {
             return binding.root
         }
     }
+

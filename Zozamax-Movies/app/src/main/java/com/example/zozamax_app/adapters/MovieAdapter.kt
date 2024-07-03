@@ -1,23 +1,18 @@
 package com.example.zozamax_app.adapters
 
-import android.content.Context
-import android.renderscript.ScriptGroup.Binding
+import   android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.example.zozamax_app.R
+import com.example.zozamax_app.data.Result
 import com.example.zozamax_app.databinding.MovieRecBinding
 import com.example.zozamax_app.databinding.MovieRightBinding
-import com.example.zozamax_app.data.Result
-import com.example.zozamax_app.util.BASE_URL
 import com.example.zozamax_app.util.IMAGE_URL
-import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Picasso
 
 private const val TAG = "movies"
 class  MovieAdapter(private val movies:List<Result>,val cont: Context): RecyclerView.Adapter<MovieAdapter.MyHolder>() {
