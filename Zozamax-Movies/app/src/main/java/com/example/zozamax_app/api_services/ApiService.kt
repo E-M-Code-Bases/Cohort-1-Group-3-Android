@@ -29,6 +29,16 @@ interface  ApiService {
     //getting movie images
     @GET("")
     suspend fun getMovieImage()
+
+    @GET("movie/top")
+    suspend fun geTopMovies(
+        @Query("language") language: String="en-US",
+        @Query("page") page: Int =1
+    ): Response<MovieApiResponse>
+
+
+
+
 }
 
 

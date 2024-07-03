@@ -49,8 +49,11 @@
     </fragment>
     <fragment
         android:id="@+id/movieFragment"
-        android:name="com.example.zozamax_app.fragments.MovieFragment"
+         android:name="com.example.zozamax_app.fragments.MovieFragment"
         android:label="fragment_movie"
         tools:layout="@layout/fragment_movie" />
+
+
+
 </navigation>
 
