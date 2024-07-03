@@ -15,8 +15,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.zozamax_app.R
 import com.example.zozamax_app.databinding.FragmentMovie1Binding
 
-
-
 class Movie1Fragment : Fragment() {
 
     private lateinit var binding: FragmentMovie1Binding
