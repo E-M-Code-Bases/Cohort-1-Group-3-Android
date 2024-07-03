@@ -19,7 +19,11 @@ import com.skydoves.transformationlayout.onTransformationStartContainer
 
 const val TAG = "popularMovies"
 
+
 class HomeFragment : Fragment() {
+
+class    HomeFragment : Fragment() {
+
 
     private lateinit var binding: FragmentHomeBinding
 
@@ -44,7 +48,7 @@ class HomeFragment : Fragment() {
         }
 
         productViewModel.popularMovies.observe(viewLifecycleOwner, Observer { movies ->
-            
+
             Log.d(TAG, "popular movies -> $movies")
             if (movies.isNotEmpty()) {
                 binding.recView.apply {
