@@ -1,13 +1,10 @@
 package com.example.zozamax_app.fragments
 
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.MediaController
-import android.widget.VideoView
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
@@ -27,16 +24,28 @@ class Movie1Fragment : Fragment() {
     ): View {
         binding = FragmentMovie1Binding.inflate(inflater, container, false)
 
-        val navHostFragment = childFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment
+        val navHostFragment =
+            childFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment
+        val navController = navHostFragment.navController
         binding.navView.bringToFront()
         binding.navView.setupWithNavController(navHostFragment.navController)
-        binding.image.setOnClickListener{
-            binding.drawerNav.openDrawer(GravityCompat.START)
+        binding.navView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.upcoming -> {
+                    navController.navigate(R.id.UpcomingFragment)
+                    true
+                }
+
+                R.id.onTv -> {
+                    navController.navigate(R.id.OnTvShowFragment)
+                    true
+                }
+                else -> false
+            }
         }
-
-
-        return binding.root
+            binding.image.setOnClickListener {
+                binding.drawerNav.openDrawer(GravityCompat.START)
+            }
+            return binding.root
+        }
     }
-
-
-}
