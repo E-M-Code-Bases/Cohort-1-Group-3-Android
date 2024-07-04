@@ -29,20 +29,7 @@ class Movie1Fragment : Fragment() {
         val navController = navHostFragment.navController
         binding.navView.bringToFront()
         binding.navView.setupWithNavController(navHostFragment.navController)
-        binding.navView.setNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.upcoming -> {
-                    navController.navigate(R.id.UpcomingFragment)
-                    true
-                }
 
-                R.id.onTv -> {
-                    navController.navigate(R.id.OnTvShowFragment)
-                    true
-                }
-                else -> false
-            }
-        }
             binding.image.setOnClickListener {
                 binding.drawerNav.openDrawer(GravityCompat.START)
             }
