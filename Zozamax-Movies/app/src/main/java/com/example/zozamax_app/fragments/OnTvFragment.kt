@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.zozamax_app.adapters.MovieAdapter
 import com.example.zozamax_app.databinding.FragmentOnTvBinding
 import com.example.zozamax_app.repository.OnTvMovieRepo
 import com.example.zozamax_app.viewmodel.OnTvViewModel
@@ -38,6 +40,14 @@ class OnTvFragment : Fragment() {
         }
         productViewModel.onTvMovies.observe(viewLifecycleOwner, Observer { movies ->
             Log.d(TAG, "OnTv Movies -> $movies")
+            if(movies.isNotEmpty()){
+                binding.recView.apply {
+
+                    layoutManager = GridLayoutManager(requireContext(), 2)
+                    adapter = MovieAdapter(movies, requireContext())
+                    setHasFixedSize(true)
+                }
+            }
         })
         return binding.root
     }
