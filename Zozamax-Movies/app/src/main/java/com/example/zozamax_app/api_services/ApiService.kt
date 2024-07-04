@@ -30,18 +30,26 @@ interface  ApiService {
     @GET("")
     suspend fun getMovieImage()
 
+    @GET("movie/NowplayingMovies")
+    suspend fun getNowPlayingMovies()
+
+
 
     @GET("movie/upcoming")
     suspend fun getUpcomingMovies(
+
         @Query("language") language: String="en-US",
         @Query("page") page: Int =1
     ): Response<MovieApiResponse>
 
+
     @GET("tv/on_the_air")
     suspend fun getOnTvMovies(
+
         @Query("language") language: String="en-US",
         @Query("page") page: Int =1
     ): Response<MovieApiResponse>
+
 }
 
 
