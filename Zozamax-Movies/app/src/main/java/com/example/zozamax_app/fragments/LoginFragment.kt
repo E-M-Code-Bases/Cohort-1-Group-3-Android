@@ -2,6 +2,8 @@ package com.example.zozamax_app.fragments
 
 import androidx.fragment.app.Fragment
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,18 +23,10 @@ class LoginFragment : Fragment() {
     ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
 
-        binding.login.setOnClickListener {
-            val navController = binding.login.findNavController()
+        Handler(Looper.getMainLooper()).postDelayed({
+            val navController = binding.root.findNavController()
             navController.navigate(R.id.action_loginFragment_to_movie1Fragment)
-            Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_LONG).show()
-        }
-
-        binding.signup.setOnClickListener {
-            val navController = binding.signup.findNavController()
-            navController.navigate(R.id.action_loginFragment_to_registerFragment)
-            Toast.makeText(requireContext(), "Registered successfully", Toast.LENGTH_LONG).show()
-        }
-
+        }, 2000)
         return binding.root
     }
 }

@@ -1,12 +1,11 @@
 package com.example.zozamax_app.adapters
 
-
+import android.os.Bundle
 import android.content.Context
-import   android.content.Context
-
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
@@ -14,20 +13,20 @@ import com.example.zozamax_app.R
 import com.example.zozamax_app.data.Result
 import com.example.zozamax_app.databinding.MovieRecBinding
 import com.example.zozamax_app.databinding.MovieRightBinding
+import com.example.zozamax_app.databinding.FragmentMovie1Binding
+import com.example.zozamax_app.fragments.MovieFragment
 import com.example.zozamax_app.util.IMAGE_URL
 import com.squareup.picasso.Picasso
 
 private const val TAG = "movies"
-
-class MovieAdapter(
-    private val movies: List<Result>,
-    val cont: Context,
-    private val onItemClickListener: (Result) -> Unit
-) : RecyclerView.Adapter<MovieAdapter.MyHolder>() {
+class  MovieAdapter(private val movies:List<Result>,val manager: FragmentManager): RecyclerView.Adapter<MovieAdapter.MyHolder>() {
     private var layoutType: Int? = null
 
-    inner class MyHolder(val binding: ViewBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class MyHolder(val binding: ViewBinding, val homeBinding: FragmentMovie1Binding): RecyclerView.ViewHolder(binding.root) {
+
         fun bindData(model: Result) {
+            val bundle = Bundle()
+            bundle.putSerializable("movie", model)
             when (binding) {
                 is MovieRecBinding -> {
                     binding.title.text = model.title
@@ -36,9 +35,15 @@ class MovieAdapter(
                     if (model.poster_path.isNotEmpty()) {
                         Picasso.get().load(IMAGE_URL + model.poster_path).into(binding.logo)
                     }
-                    binding.root.setOnClickListener {
-                        onItemClickListener(model)
-                    }
+
+                    binding.root.setOnClickListener{
+                        val navCont = binding.root.findNavController()
+                        navCont.navigate(R.id.action_homeFragment_to_movieFragment, bundle)
+                        //homeBinding.drawerNav.visibility = View.GONE
+                        //val movieFragment = MovieFragment.newInstance(model)
+                        //val transaction = manager.beginTransaction().replace(homeBinding.frame.id, movieFragment)
+                        //transaction.commit()
+                   
                 }
                 is MovieRightBinding -> {
                     binding.title.text = model.title
@@ -48,21 +53,28 @@ class MovieAdapter(
                         Log.d(TAG, model.poster_path)
                         Picasso.get().load(IMAGE_URL + model.poster_path).into(binding.logo)
                     }
-                    binding.root.setOnClickListener {
-                        onItemClickListener(model)
-                    }
+                    binding.root.setOnClickListener{
+                        //homeBinding.drawerNav.visibility = View.GONE
+                        //val movieFragment = MovieFragment.newInstance(model)
+                        //val transaction = manager.beginTransaction().replace(homeBinding.frame.id, movieFragment)
+                        //transaction.commit()
+                        val navCont = binding.root.findNavController()
+                        navCont.navigate(R.id.action_homeFragment_to_movieFragment, bundle)
+
+
                 }
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieAdapter.MyHolder {
+       //val homeBind = FragmentMovie1Binding.inflate(LayoutInflater.from(parent.context), parent, false)
         val binding = if (layoutType == 0) {
             MovieRecBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         } else {
             MovieRightBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         }
-        return MyHolder(binding)
+        return MyHolder(binding, homeBind)
     }
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
