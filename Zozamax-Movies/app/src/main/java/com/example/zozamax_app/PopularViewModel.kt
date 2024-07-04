@@ -8,9 +8,11 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import com.example.zozamax_app.Data.models.Result
+import com.example.zozamax_app.Data.models.ResultX
 
 class PopularViewModel(val popularRepo:PopularRepository):ViewModel() {
     val popularPlayingMovies=MutableLiveData<List<Result>>(emptyList())
+
     init {
         getPopularPlayingMovies()
     }
@@ -21,6 +23,7 @@ class PopularViewModel(val popularRepo:PopularRepository):ViewModel() {
                 if (response.isSuccessful){
                     if (response.body()!=null){
                         popularPlayingMovies.postValue(response.body()!!.results)
+
                     }
                 }
             }
@@ -29,6 +32,7 @@ class PopularViewModel(val popularRepo:PopularRepository):ViewModel() {
 
 
 }
+
 class PopularModelProvider(val popularRepo: PopularRepository): ViewModelProvider.Factory{
     override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
         return PopularViewModel(popularRepo) as T

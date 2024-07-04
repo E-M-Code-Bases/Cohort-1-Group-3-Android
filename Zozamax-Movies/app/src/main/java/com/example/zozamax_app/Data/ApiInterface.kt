@@ -1,9 +1,11 @@
 package com.example.zozamax_app.Data
 
 import com.example.zozamax_app.Data.models.ApiResponse
+import com.example.zozamax_app.Data.models.VideoResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiInterface {
 
@@ -20,7 +22,7 @@ interface ApiInterface {
     @GET("account/{account_id}/favorite/movies")
     suspend fun getFavoriteMovies():Response<ApiResponse>
     @GET("movie/{movie_id}/videos")
-    suspend fun getVideos():Response<ApiResponse>
+    suspend fun getVideos(@Path("movie_id") id: Int):Response<VideoResponse>
 
 
 }

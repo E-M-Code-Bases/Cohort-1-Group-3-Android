@@ -26,10 +26,10 @@ class TopRatedFragment: Fragment()  {
         val v by viewModels<TopRatedViewModel>{ TopRatedModelProvider(topRatedRepo) }
         v.topRatedMovies.observe(viewLifecycleOwner, Observer{
             if (it.isNotEmpty()){
-                val adp= RecyclerViewAdapter(it)
+//                val adp= RecyclerViewAdapter(it)
                 binding.RecyclerView.apply {
                     layoutManager=GridLayoutManager(requireContext(),2)
-                    adapter=adp
+//                    adapter=adp
                     setHasFixedSize(true)
                 }
             }
