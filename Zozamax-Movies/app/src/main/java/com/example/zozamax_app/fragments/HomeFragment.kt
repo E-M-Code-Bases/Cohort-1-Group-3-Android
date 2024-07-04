@@ -50,7 +50,7 @@ class  HomeFragment : Fragment() {
                 binding.recView.apply {
                     // layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
                     layoutManager = GridLayoutManager(requireContext(), 2)
-                    adapter = MovieAdapter(movies, requireContext())
+                    adapter = MovieAdapter(movies, childFragmentManager)
                     setHasFixedSize(true)
                 }
             }
