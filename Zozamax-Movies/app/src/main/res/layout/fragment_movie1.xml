@@ -72,7 +72,6 @@
                 />
 
 
-
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView2"
                 class="androidx.navigation.fragment.NavHostFragment"

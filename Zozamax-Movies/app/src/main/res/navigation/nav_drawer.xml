@@ -23,6 +23,34 @@
         <argument
             android:name="movie"
             app:argType="com.example.zozamax_app.data.Result" />
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/TopFragment"
+        android:name="com.example.zozamax_app.fragments.TopFragment"
+        android:label="Top Rated"
+        />
+    <action
+        android:id="@+id/action_homeFragment_to_TopFragment"
+        app:destination="@id/TopFragment"/>
+
+    <fragment
+        android:id="@+id/UpcomingFragment"
+        android:name="com.example.zozamax_app.fragments.UpcomingFragment"
+        android:label="Upcoming">
+    <action
+        android:id="@+id/action_homeFragment_to_upcomingFragment"
+        app:destination="@id/UpcomingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/OnTvShowFragment"
+        android:name="com.example.zozamax_app.fragments.OnTvFragment"
+        android:label="OnTv"
+        tools:layout="@layout/fragment_on_tv">
+
+    <action
+        android:id="@+id/action_userFragment_to_onTvFragment"
+        app:destination="@id/OnTvShowFragment" />
     </fragment>
 
 </navigation>
