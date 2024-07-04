@@ -24,6 +24,8 @@ contentpager = "1.0.0"
 recyclerview = "1.3.2"
 retrofit = "2.9.0"
 transformationlayout = "1.1.2"
+googleGmsGoogleServices = "4.4.2"
+firebaseDatabase = "21.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -52,8 +54,10 @@ moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", ver
 androidx-contentpager = { group = "androidx.contentpager", name = "contentpager", version.ref = "contentpager" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 transformationlayout = { module = "com.github.skydoves:transformationlayout", version.ref = "transformationlayout" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 
