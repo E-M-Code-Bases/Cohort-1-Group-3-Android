@@ -5,33 +5,32 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.CreationExtras
-import com.example.zozamax_app.Data.models.Result
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import com.example.zozamax_app.Data.models.Result
 
-class MovieViewModel(val repo:NowPlayingRepository):ViewModel() {
-    val nowPlayingMovies=MutableLiveData<List<Result>>(emptyList())
-
+class PopularViewModel(val popularRepo:PopularRepository):ViewModel() {
+    val popularPlayingMovies=MutableLiveData<List<Result>>(emptyList())
     init {
-        getNowPlayingMovies()
+        getPopularPlayingMovies()
     }
-
-    private fun getNowPlayingMovies(){
+    private fun getPopularPlayingMovies(){
         viewModelScope.launch {
             while (isActive){
-                val response = repo.getNowPlaying()
+                val response=popularRepo.getPopularMovies()
                 if (response.isSuccessful){
-                    if (response.body() != null){
-                        nowPlayingMovies.postValue(response.body()!!.results)
+                    if (response.body()!=null){
+                        popularPlayingMovies.postValue(response.body()!!.results)
                     }
                 }
             }
         }
     }
-}
 
-class ModelProvider(val repo: NowPlayingRepository):ViewModelProvider.Factory{
+
+}
+class PopularModelProvider(val popularRepo: PopularRepository): ViewModelProvider.Factory{
     override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
-        return MovieViewModel(repo) as T
+        return PopularViewModel(popularRepo) as T
     }
 }

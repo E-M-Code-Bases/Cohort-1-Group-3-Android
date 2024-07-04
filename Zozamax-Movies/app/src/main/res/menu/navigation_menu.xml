@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/home"
-        android:title="Movies"
+        android:title="Home"
         />
     <item
         android:id="@+id/nowPlaying"
@@ -23,14 +23,18 @@
         android:title="Top Rated"
         />
     <item
+        android:id="@+id/trailers"
+        android:title="Trailers"
+        />
+    <item
+        android:id="@+id/favorites"
+        android:title="Favorites"
+        />
+    <item
         android:id="@+id/support"
         android:title="Support"
         />
 
-    <item
-        android:id="@+id/privacypolicy"
-        android:title="Privacy policy"
-        />
     <item
         android:id="@+id/aboutUs"
         android:title="About"
@@ -39,7 +43,6 @@
     <item
         android:id="@+id/logout"
         android:title="Logout"
-
 
         />
 

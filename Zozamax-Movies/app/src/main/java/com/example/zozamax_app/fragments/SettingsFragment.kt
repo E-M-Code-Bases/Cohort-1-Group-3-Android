@@ -7,30 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.zozamax_app.R
 
-class TrailerFragment : Fragment() {
+class SettingsFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
 
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_trailer, container, false)
+        return inflater.inflate(R.layout.fragment_settings, container, false)
     }
 
-    companion object {
-
-        fun newInstance(param1: String, param2: String) =
-            TrailerFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
-    }
 }
