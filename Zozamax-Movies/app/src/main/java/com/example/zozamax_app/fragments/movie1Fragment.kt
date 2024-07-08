@@ -37,4 +37,3 @@ class Movie1Fragment : Fragment() {
         return binding.root
     }
 }
-
