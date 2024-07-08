@@ -17,7 +17,7 @@ import com.example.zozamax_app.viewmodel.PopularModelProvider
 import com.example.zozamax_app.viewmodel.PopularViewModel
 import com.skydoves.transformationlayout.onTransformationStartContainer
 
-private const val TAG = "popularMovies"
+private const val TAG = "pppppppo"
 class HomeFragment : Fragment() {
 
     class HomeFragment : Fragment() {
@@ -61,3 +61,4 @@ class HomeFragment : Fragment() {
         }
     }
 }
+;

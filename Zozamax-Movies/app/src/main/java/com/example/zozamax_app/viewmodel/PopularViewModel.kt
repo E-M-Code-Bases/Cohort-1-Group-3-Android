@@ -16,7 +16,7 @@ class PopularViewModel(val repo: PopularMovieRepo) : ViewModel() {
     init {
         getPopularMovies()
     }
-    fun getPopularMovies() {
+    private fun getPopularMovies() {
         viewModelScope.launch {
             while (isActive) {
                 try {
