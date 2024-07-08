@@ -8,6 +8,6 @@ import retrofit2.Response
 class TopMovieRepo() {
     suspend fun getTopMovies(): Response<MovieApiResponse> {
         val retrofit = AppModule().getRetrofitInstance()
-        return retrofit.geTopMovies()
+        return retrofit.getNowPlayingMovies()
     }
 }

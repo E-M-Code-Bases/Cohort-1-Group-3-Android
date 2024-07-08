@@ -17,7 +17,7 @@ class Movie1Fragment : Fragment() {
 
     private lateinit var binding: FragmentMovie1Binding
 
-    override fun onCreateView(
+    override fun  onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
@@ -38,7 +38,3 @@ class Movie1Fragment : Fragment() {
         return binding.root
     }
 }
-
-
-
-

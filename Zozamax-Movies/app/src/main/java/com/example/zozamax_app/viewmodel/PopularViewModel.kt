@@ -1,6 +1,6 @@
 package com.example.zozamax_app.viewmodel
 
-import androidx.lifecycle.MutableLiveData
+import  androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
@@ -32,7 +32,7 @@ class PopularViewModel(val repo: PopularMovieRepo) : ViewModel() {
                 }
                 delay(10000L)
             }
-        }
+          }
     }
 
 }
