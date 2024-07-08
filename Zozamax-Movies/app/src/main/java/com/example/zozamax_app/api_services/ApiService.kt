@@ -31,13 +31,6 @@ interface  ApiService {
     suspend fun getMovieImage()
 
     @GET("movie/NowplayingMovies")
-    suspend fun getNowPlayingMovies(
-
-
-
-    @GET("movie/top")
-    suspend fun geTopMovies(
-
 
     @GET("movie/upcoming")
     suspend fun getUpcomingMovies(

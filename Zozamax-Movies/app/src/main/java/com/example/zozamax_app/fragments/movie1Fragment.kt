@@ -28,6 +28,7 @@ class Movie1Fragment : Fragment() {
         val navController = navHostFragment.navController
         binding.navView.bringToFront()
         binding.navView.setupWithNavController(navHostFragment.navController)
+
         binding.navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
 
@@ -62,6 +63,7 @@ class Movie1Fragment : Fragment() {
                 else -> false
             }
         }
+
             binding.image.setOnClickListener {
                 binding.drawerNav.openDrawer(GravityCompat.START)
             }

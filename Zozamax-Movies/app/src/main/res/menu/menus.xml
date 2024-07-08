@@ -3,34 +3,29 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home"
-            android:title="Home" />
+            android:title="@string/home" />
         <item
             android:id="@+id/onTv"
-            android:title="On TV" />
+            android:title="@string/on_tv" />
         <item
             android:id="@+id/popular"
-            android:title="Popular" />
+            android:title="@string/popular" />
         <item
             android:id="@+id/upcoming"
-            android:title="Upcoming" />
-        <item
-            android:id="@+id/user"
-            android:title="User"
-            android:textAppearance="@style/BoldMenuItemText">
-            <menu>
+            android:title="@string/upcoming" />
+
                 <item
                     android:id="@+id/nowplaying"
-                    android:title="Now Playing" />
+                    android:title="@string/now_playing" />
                 <item
                     android:id="@+id/favourites"
-                    android:title="Favourites" />
+                    android:title="@string/favourites" />
                 <item
                     android:id="@+id/profile"
-                    android:title="Profile" />
+                    android:title="@string/profile" />
                 <item
                     android:id="@+id/logout"
-                    android:title="Logout" />
-            </menu>
-        </item>
+                    android:title="@string/logout" />
+
     </group>
 </menu>
