@@ -24,7 +24,13 @@ class PopularViewModel(val repo: PopularMovieRepo) : ViewModel() {
                     if (response.isSuccessful) {
                         if (response.body()!!.results.isNotEmpty()) {
                             popularMovies.postValue(response.body()!!.results)
+                        }else{
+                            popularMovies.postValue(emptyList())
+
                         }
+
+                    }else{
+                        popularMovies.postValue(emptyList())
 
                     }
                 } catch (t: Throwable) {

@@ -10,12 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.zozamax_app.R
 import com.example.zozamax_app.adapters.MovieAdapter
 import com.example.zozamax_app.databinding.FragmentHomeBinding
 import com.example.zozamax_app.repository.PopularMovieRepo
 import com.example.zozamax_app.viewmodel.PopularModelProvider
 import com.example.zozamax_app.viewmodel.PopularViewModel
-import com.skydoves.transformationlayout.onTransformationStartContainer
 
 private const val TAG = "pppppppo"
 class HomeFragment : Fragment() {
@@ -51,7 +51,7 @@ class HomeFragment : Fragment() {
                 if (movies.isNotEmpty()) {
                     binding.recView.apply {
                         layoutManager = GridLayoutManager(requireContext(), 2)
-                        adapter = MovieAdapter(movies)
+                        adapter = MovieAdapter(movies, R.id.action_homeFragment_to_movieFragment)
                         setHasFixedSize(true)
                     }
                 }

@@ -10,13 +10,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.zozamax_app.R
 import com.example.zozamax_app.adapters.MovieAdapter
-import com.example.zozamax_app.databinding.FragmentHomeBinding
 import com.example.zozamax_app.databinding.FragmentUpcomingBinding
 import com.example.zozamax_app.repository.UpcomingMovieRepo
-import com.example.zozamax_app.viewmodel.PopularModelProvider
-import com.example.zozamax_app.viewmodel.PopularViewModel
 import com.example.zozamax_app.viewmodel.UpcomingModelProvider
 import com.example.zozamax_app.viewmodel.UpcomingViewModel
 import com.skydoves.transformationlayout.onTransformationStartContainer
@@ -54,7 +51,7 @@ class  UpcomingFragment : Fragment() {
                 binding.recView.apply {
 
                     layoutManager = GridLayoutManager(requireContext(), 2)
-                    adapter = MovieAdapter(movies)
+                    adapter = MovieAdapter(movies, R.id.action_upcoming_to_movieFragment)
                     setHasFixedSize(true)
                 }
             }

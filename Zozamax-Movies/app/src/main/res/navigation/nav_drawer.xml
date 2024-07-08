@@ -32,17 +32,14 @@
         android:name="com.example.zozamax_app.fragments.TopFragment"
         android:label="Top Rated"
         />
-    <action
-        android:id="@+id/action_homeFragment_to_TopFragment"
-        app:destination="@id/TopFragment"/>
 
     <fragment
         android:id="@+id/upcoming"
         android:name="com.example.zozamax_app.fragments.UpcomingFragment"
         android:label="Upcoming">
-    <action
-        android:id="@+id/action_homeFragment_to_upcomingFragment"
-        app:destination="@id/upcoming" />
+        <action
+            android:id="@+id/action_upcoming_to_movieFragment"
+            app:destination="@id/movieFragment" />
     </fragment>
 
     <fragment
@@ -50,10 +47,9 @@
         android:name="com.example.zozamax_app.fragments.OnTvFragment"
         android:label="OnTv"
         tools:layout="@layout/fragment_on_tv">
-
-    <action
-        android:id="@+id/action_userFragment_to_onTvFragment"
-        app:destination="@id/onTv" />
+        <action
+            android:id="@+id/action_onTv_to_movieFragment"
+            app:destination="@id/movieFragment" />
     </fragment>
 
 </navigation>
