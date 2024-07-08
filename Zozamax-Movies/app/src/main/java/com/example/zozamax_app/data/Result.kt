@@ -2,8 +2,8 @@ package com.example.zozamax_app.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
+import java.io.Serializable
 
-@Parcelize
 data class Result(
     val adult: Boolean,
     val backdrop_path: String,
@@ -19,4 +19,4 @@ data class Result(
     val video: Boolean,
     val vote_average: Double,
     val vote_count: Int
-):Parcelable
+):Serializable

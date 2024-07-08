@@ -9,7 +9,24 @@
         android:id="@+id/homeFragment"
         android:name="com.example.zozamax_app.fragments.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.example.zozamax_app.fragments.MovieFragment"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie" >
+        <argument
+            android:name="movie"
+            app:argType="com.example.zozamax_app.data.Result" />
+    </fragment>
+        <argument
+            android:name="movie"
+            app:argType="com.example.zozamax_app.data.Result" />
     <fragment
         android:id="@+id/TopFragment"
         android:name="com.example.zozamax_app.fragments.TopFragment"
@@ -18,5 +35,25 @@
     <action
         android:id="@+id/action_homeFragment_to_TopFragment"
         app:destination="@id/TopFragment"/>
+
+    <fragment
+        android:id="@+id/UpcomingFragment"
+        android:name="com.example.zozamax_app.fragments.UpcomingFragment"
+        android:label="Upcoming">
+    <action
+        android:id="@+id/action_homeFragment_to_upcomingFragment"
+        app:destination="@id/UpcomingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/OnTvShowFragment"
+        android:name="com.example.zozamax_app.fragments.OnTvFragment"
+        android:label="OnTv"
+        tools:layout="@layout/fragment_on_tv">
+
+    <action
+        android:id="@+id/action_userFragment_to_onTvFragment"
+        app:destination="@id/OnTvShowFragment" />
+    </fragment>
 
 </navigation>

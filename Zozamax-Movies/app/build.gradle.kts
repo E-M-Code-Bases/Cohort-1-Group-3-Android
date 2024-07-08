@@ -4,6 +4,8 @@ plugins {
     kotlin("kapt") // Add this line
     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
     id ("kotlin-parcelize")
+    id ("androidx.navigation.safeargs.kotlin")
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -62,6 +64,7 @@ dependencies {
 
     // Retrofit dependencies
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation(libs.firebase.database)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
