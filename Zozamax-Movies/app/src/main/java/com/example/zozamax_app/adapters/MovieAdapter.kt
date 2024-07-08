@@ -19,10 +19,10 @@ import com.example.zozamax_app.util.IMAGE_URL
 import com.squareup.picasso.Picasso
 
 private const val TAG = "movies"
-class  MovieAdapter(private val movies:List<Result>,val manager: FragmentManager): RecyclerView.Adapter<MovieAdapter.MyHolder>() {
+class  MovieAdapter(private val movies:List<Result>): RecyclerView.Adapter<MovieAdapter.MyHolder>() {
     private var layoutType: Int? = null
 
-    inner class MyHolder(val binding: ViewBinding, val homeBinding: FragmentMovie1Binding): RecyclerView.ViewHolder(binding.root) {
+    inner class MyHolder(val binding: ViewBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun bindData(model: Result) {
             val bundle = Bundle()
@@ -36,15 +36,17 @@ class  MovieAdapter(private val movies:List<Result>,val manager: FragmentManager
                         Picasso.get().load(IMAGE_URL + model.poster_path).into(binding.logo)
                     }
 
-                    binding.root.setOnClickListener{
+                    binding.root.setOnClickListener {
                         val navCont = binding.root.findNavController()
                         navCont.navigate(R.id.action_homeFragment_to_movieFragment, bundle)
                         //homeBinding.drawerNav.visibility = View.GONE
                         //val movieFragment = MovieFragment.newInstance(model)
                         //val transaction = manager.beginTransaction().replace(homeBinding.frame.id, movieFragment)
                         //transaction.commit()
-                   
+
+                    }
                 }
+
                 is MovieRightBinding -> {
                     binding.title.text = model.title
                     binding.description.text = "Watch date: ${model.release_date}"
@@ -53,7 +55,7 @@ class  MovieAdapter(private val movies:List<Result>,val manager: FragmentManager
                         Log.d(TAG, model.poster_path)
                         Picasso.get().load(IMAGE_URL + model.poster_path).into(binding.logo)
                     }
-                    binding.root.setOnClickListener{
+                    binding.root.setOnClickListener {
                         //homeBinding.drawerNav.visibility = View.GONE
                         //val movieFragment = MovieFragment.newInstance(model)
                         //val transaction = manager.beginTransaction().replace(homeBinding.frame.id, movieFragment)
@@ -62,6 +64,7 @@ class  MovieAdapter(private val movies:List<Result>,val manager: FragmentManager
                         navCont.navigate(R.id.action_homeFragment_to_movieFragment, bundle)
 
 
+                    }
                 }
             }
         }
@@ -74,7 +77,7 @@ class  MovieAdapter(private val movies:List<Result>,val manager: FragmentManager
         } else {
             MovieRightBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         }
-        return MyHolder(binding, homeBind)
+        return MyHolder(binding)
     }
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {

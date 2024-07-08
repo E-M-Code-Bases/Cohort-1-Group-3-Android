@@ -23,7 +23,10 @@
         <argument
             android:name="movie"
             app:argType="com.example.zozamax_app.data.Result" />
-        tools:layout="@layout/fragment_home" />
+    </fragment>
+        <argument
+            android:name="movie"
+            app:argType="com.example.zozamax_app.data.Result" />
     <fragment
         android:id="@+id/TopFragment"
         android:name="com.example.zozamax_app.fragments.TopFragment"

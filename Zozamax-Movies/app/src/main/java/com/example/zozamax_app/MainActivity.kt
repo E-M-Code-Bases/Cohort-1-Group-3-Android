@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val statusBar = window
-        statusBar.statusBarColor = this.getColor(R.color.red)
+       // statusBar.statusBarColor = this.getColor(R.color.red)
         }
     }
 

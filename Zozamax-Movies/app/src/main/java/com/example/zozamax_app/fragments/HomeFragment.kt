@@ -17,48 +17,47 @@ import com.example.zozamax_app.viewmodel.PopularModelProvider
 import com.example.zozamax_app.viewmodel.PopularViewModel
 import com.skydoves.transformationlayout.onTransformationStartContainer
 
-const val TAG = "popularMovies"
-
-
+private const val TAG = "popularMovies"
 class HomeFragment : Fragment() {
 
-class    HomeFragment : Fragment() {
+    class HomeFragment : Fragment() {
 
 
-    private lateinit var binding: FragmentHomeBinding
+        private lateinit var binding: FragmentHomeBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        //onTransformationStartContainer()
-    }
-
-    @SuppressLint("SuspiciousIndentation")
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
-
-        val repo = PopularMovieRepo()
-
-        val productViewModel: PopularViewModel by viewModels {
-            PopularModelProvider(repo)
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            //onTransformationStartContainer()
         }
 
-        productViewModel.popularMovies.observe(viewLifecycleOwner, Observer { movies ->
+        @SuppressLint("SuspiciousIndentation")
+        override fun onCreateView(
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?,
+        ): View {
 
-            Log.d(TAG, "popular movies -> $movies")
-            if (movies.isNotEmpty()) {
-                binding.recView.apply {
-                    layoutManager = GridLayoutManager(requireContext(), 2)
-                    adapter = MovieAdapter(movies, childFragmentManager)
-                    setHasFixedSize(true)
-                }
+            binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+            val repo = PopularMovieRepo()
+
+            val productViewModel: PopularViewModel by viewModels {
+                PopularModelProvider(repo)
             }
-        })
 
-        return binding.root
+            productViewModel.popularMovies.observe(viewLifecycleOwner, Observer { movies ->
+
+                Log.d(TAG, "popular movies -> $movies")
+                if (movies.isNotEmpty()) {
+                    binding.recView.apply {
+                        layoutManager = GridLayoutManager(requireContext(), 2)
+                        adapter = MovieAdapter(movies)
+                        setHasFixedSize(true)
+                    }
+                }
+            })
+
+            return binding.root
+        }
     }
 }

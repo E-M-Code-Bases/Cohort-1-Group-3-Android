@@ -37,11 +37,7 @@ class NowPlayingFragment : Fragment() {
             if (movies.isNotEmpty()) {
                 binding.recView.apply {
                     layoutManager = GridLayoutManager(requireContext(), 2)
-                    adapter = MovieAdapter(movies, requireContext()) { movie ->
-                        
-                        Log.d(TAG, "Clicked movie: ${movie.title}")
-
-                    }
+                    adapter = MovieAdapter(movies)
                     setHasFixedSize(true)
                 }
             }
