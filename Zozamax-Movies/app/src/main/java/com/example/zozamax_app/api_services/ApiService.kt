@@ -33,6 +33,7 @@ interface  ApiService {
     @GET("movie/NowplayingMovies")
     suspend fun getNowPlayingMovies(): Response<MovieApiResponse>
 
+
     @GET("movie/upcoming")
     suspend fun getUpcomingMovies(
 

@@ -17,7 +17,7 @@ class Movie1Fragment : Fragment() {
 
     private lateinit var binding: FragmentMovie1Binding
 
-    override fun onCreateView(
+    override fun  onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
@@ -25,22 +25,10 @@ class Movie1Fragment : Fragment() {
 
         val navHostFragment =
             childFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment
-        val navController = navHostFragment.navController
+
         binding.navView.bringToFront()
         binding.navView.setupWithNavController(navHostFragment.navController)
 
-        binding.navView.setNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-
-                R.id.toprated -> {
-                    navController.navigate(R.id.TopFragment)
-                    true
-                }
-
-                else -> false
-            }
-
-        }
 
         binding.image.setOnClickListener {
             binding.drawerNav.openDrawer(GravityCompat.START)
@@ -49,25 +37,3 @@ class Movie1Fragment : Fragment() {
         return binding.root
     }
 }
-
-
-                R.id.upcoming -> {
-                    navController.navigate(R.id.UpcomingFragment)
-                    true
-                }
-
-                R.id.onTv -> {
-                    navController.navigate(R.id.OnTvShowFragment)
-                    true
-                }
-                else -> false
-            }
-        }
-
-            binding.image.setOnClickListener {
-                binding.drawerNav.openDrawer(GravityCompat.START)
-            }
-            return binding.root
-        }
-    }
-

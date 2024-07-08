@@ -42,7 +42,7 @@ class TopFragment : Fragment() {
             if (movies.isNotEmpty()) {
                 binding.recView.apply {
                     layoutManager = GridLayoutManager(requireContext(), 2)
-                    adapter = MovieAdapter(movies, requireContext())
+                    adapter = MovieAdapter(movies)
                     setHasFixedSize(true)
                 }
             }
