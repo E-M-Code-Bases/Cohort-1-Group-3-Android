@@ -3,17 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_drawer"
+    app:startDestination="@id/homeFragment"
+    tools:ignore="ExtraText">
     app:startDestination="@id/home">
 
     <fragment
-        android:id="@+id/home"
+        android:id="@+id/homeFragment"
         android:name="com.example.zozamax_app.fragments.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_movieFragment"
-            app:destination="@id/movieFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
+
 
     <fragment
         android:id="@+id/movieFragment"
@@ -54,6 +53,38 @@
     <action
         android:id="@+id/action_userFragment_to_onTvFragment"
         app:destination="@id/onTv" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nowPlaying"
+        android:name="com.example.zozamax_app.fragments.NowPlayingFragment"
+        android:label="Now Playing"
+        tools:layout="@layout/fragment_nowplaying">
+
+        <action
+            android:id="@+id/action_userFragment_to_nowPlayingFragment"
+            app:destination="@id/nowPlaying" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/topRated"
+        android:name="com.example.zozamax_app.fragments.TopFragment"
+        android:label="Top Rated"
+        tools:layout="@layout/fragment_top">
+
+        <action
+            android:id="@+id/action_userFragment_to_topFragment"
+            app:destination="@id/topRated" />
+    </fragment>
+    <fragment
+        android:id="@+id/popular"
+        android:name="com.example.zozamax_app.fragments.UpcomingFragment"
+        android:label="Popular"
+        tools:layout="@layout/fragment_upcoming">
+
+        <action
+            android:id="@+id/action_userFragment_to_homeFragment"
+            app:destination="@id/popular" />
     </fragment>
 
 </navigation>
