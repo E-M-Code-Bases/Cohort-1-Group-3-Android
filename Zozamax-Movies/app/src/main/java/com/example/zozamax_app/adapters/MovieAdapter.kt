@@ -38,11 +38,7 @@ class  MovieAdapter(private val movies:List<Result>): RecyclerView.Adapter<Movie
 
                     binding.root.setOnClickListener {
                         val navCont = binding.root.findNavController()
-                        navCont.navigate(R.id.action_homeFragment_to_movieFragment, bundle)
-                        //homeBinding.drawerNav.visibility = View.GONE
-                        //val movieFragment = MovieFragment.newInstance(model)
-                        //val transaction = manager.beginTransaction().replace(homeBinding.frame.id, movieFragment)
-                        //transaction.commit()
+                        navCont.navigate(R.id.action_movie1Fragment_to_movieFragment, bundle)
 
                     }
                 }
@@ -56,12 +52,9 @@ class  MovieAdapter(private val movies:List<Result>): RecyclerView.Adapter<Movie
                         Picasso.get().load(IMAGE_URL + model.poster_path).into(binding.logo)
                     }
                     binding.root.setOnClickListener {
-                        //homeBinding.drawerNav.visibility = View.GONE
-                        //val movieFragment = MovieFragment.newInstance(model)
-                        //val transaction = manager.beginTransaction().replace(homeBinding.frame.id, movieFragment)
-                        //transaction.commit()
                         val navCont = binding.root.findNavController()
-                        navCont.navigate(R.id.action_homeFragment_to_movieFragment, bundle)
+                        navCont.navigate(R.id.action_movie1Fragment_to_movieFragment)
+                        //navCont.navigate(R.id.action_homeFragment_to_movieFragment, bundle)
 
 
                     }
@@ -78,6 +71,7 @@ class  MovieAdapter(private val movies:List<Result>): RecyclerView.Adapter<Movie
             MovieRightBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         }
         return MyHolder(binding)
+
     }
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
