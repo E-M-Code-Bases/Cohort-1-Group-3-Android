@@ -8,6 +8,9 @@
             android:id="@+id/onTv"
             android:title="@string/on_tv" />
         <item
+            android:id="@+id/topRated"
+            android:title="@string/top_rated" />
+        <item
             android:id="@+id/popular"
             android:title="@string/popular" />
         <item
@@ -15,7 +18,7 @@
             android:title="@string/upcoming" />
 
                 <item
-                    android:id="@+id/nowplaying"
+                    android:id="@+id/nowPlaying"
                     android:title="@string/now_playing" />
                 <item
                     android:id="@+id/favourites"
