@@ -21,7 +21,7 @@ import com.example.zozamax_app.viewmodel.UpcomingModelProvider
 import com.example.zozamax_app.viewmodel.UpcomingViewModel
 import com.skydoves.transformationlayout.onTransformationStartContainer
 
-private const val TAG = "popularMovies"
+private const val TAG = "upcomingMovies"
 
 class  UpcomingFragment : Fragment() {
 
