@@ -10,13 +10,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zozamax_app.adapters.MovieAdapter
-import com.example.zozamax_app.databinding.FragmentHomeBinding
 import com.example.zozamax_app.databinding.FragmentUpcomingBinding
 import com.example.zozamax_app.repository.UpcomingMovieRepo
-import com.example.zozamax_app.viewmodel.PopularModelProvider
-import com.example.zozamax_app.viewmodel.PopularViewModel
 import com.example.zozamax_app.viewmodel.UpcomingModelProvider
 import com.example.zozamax_app.viewmodel.UpcomingViewModel
 import com.skydoves.transformationlayout.onTransformationStartContainer
