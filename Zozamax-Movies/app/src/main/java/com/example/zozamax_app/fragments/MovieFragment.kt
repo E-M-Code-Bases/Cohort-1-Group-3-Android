@@ -9,7 +9,6 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.zozamax_app.R
@@ -22,7 +21,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 import com.example.zozamax_app.data.Result
-import com.example.zozamax_app.databinding.FragmentMovie1Binding
+import com.example.zozamax_app.databinding.FragmentHomeBinding
 
 private const val MOVIE = "movie"
 
@@ -39,7 +38,7 @@ class MovieFragment : Fragment() {
     ): View {
         binding = FragmentMovieBinding.inflate(inflater, container, false)
 
-        val view1 = FragmentMovie1Binding.inflate(inflater, container, false)
+        val view1 = FragmentHomeBinding.inflate(inflater, container, false)
         view1.image.setImageResource(R.drawable.baseline_person_24)
 
         pref = requireContext().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)

@@ -31,7 +31,7 @@ class OnTvViewModel (val repo: OnTvMovieRepo): ViewModel(){
                 catch(t: Throwable) {
                     println(t)
                 }
-                delay(1000L)
+                delay(10000L)
             }
         }
     }

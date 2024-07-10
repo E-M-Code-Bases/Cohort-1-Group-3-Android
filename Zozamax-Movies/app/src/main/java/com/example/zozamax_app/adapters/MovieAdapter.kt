@@ -13,8 +13,6 @@ import com.example.zozamax_app.R
 import com.example.zozamax_app.data.Result
 import com.example.zozamax_app.databinding.MovieRecBinding
 import com.example.zozamax_app.databinding.MovieRightBinding
-import com.example.zozamax_app.databinding.FragmentMovie1Binding
-import com.example.zozamax_app.fragments.MovieFragment
 import com.example.zozamax_app.util.IMAGE_URL
 import com.squareup.picasso.Picasso
 

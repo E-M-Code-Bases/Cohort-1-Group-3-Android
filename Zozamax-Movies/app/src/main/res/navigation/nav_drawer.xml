@@ -5,13 +5,13 @@
     android:id="@+id/nav_drawer"
     app:startDestination="@id/homeFragment"
     tools:ignore="ExtraText">
-    app:startDestination="@id/home">
+    >
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.zozamax_app.fragments.HomeFragment"
+        android:name="com.example.zozamax_app.fragments.PopularFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_popular" />
 
 
     <fragment
@@ -78,13 +78,24 @@
     </fragment>
     <fragment
         android:id="@+id/popular"
-        android:name="com.example.zozamax_app.fragments.UpcomingFragment"
+        android:name="com.example.zozamax_app.fragments.PopularFragment"
         android:label="Popular"
-        tools:layout="@layout/fragment_upcoming">
+        tools:layout="@layout/fragment_popular">
 
         <action
-            android:id="@+id/action_userFragment_to_homeFragment"
+            android:id="@+id/action_userFragment_to_home1Fragment"
             app:destination="@id/popular" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.zozamax_app.fragments.PopularFragment"
+        android:label="Popular"
+        tools:layout="@layout/fragment_popular">
+
+        <action
+            android:id="@+id/action_userFragment_to_popularFragment"
+            app:destination="@id/home" />
     </fragment>
 
 </navigation>
