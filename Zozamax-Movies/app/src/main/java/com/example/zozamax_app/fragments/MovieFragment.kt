@@ -1,68 +1,91 @@
 package com.example.zozamax_app.fragments
 
 
-import android.net.Uri
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.MediaController
-import android.widget.VideoView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.example.zozamax_app.R
-import com.example.zozamax_app.data.Result
 import com.example.zozamax_app.databinding.FragmentMovieBinding
-import com.skydoves.transformationlayout.TransformationLayout
-import com.skydoves.transformationlayout.onTransformationEndContainer
+import com.example.zozamax_app.util.IMAGE_URL
+import com.example.zozamax_app.util.SHARED_PREFS
+import com.example.zozamax_app.util.USER_NAME
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.squareup.picasso.Picasso
+import com.example.zozamax_app.data.Result
+import com.example.zozamax_app.databinding.FragmentHomeBinding
 
+private const val MOVIE = "movie"
 
-class   MovieFragment : Fragment() {
+class MovieFragment : Fragment() {
+    private lateinit var binding: FragmentMovieBinding
+    private val args: MovieFragmentArgs by navArgs()
+    private lateinit var firebaseAuth: DatabaseReference
+    private lateinit var pref: SharedPreferences
 
-    private var _binding: FragmentMovieBinding? = null
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentMovieBinding.inflate(inflater, container, false)
+    ): View {
+        binding = FragmentMovieBinding.inflate(inflater, container, false)
+
+        val view1 = FragmentHomeBinding.inflate(inflater, container, false)
+        view1.image.setImageResource(R.drawable.baseline_person_24)
+
+        pref = requireContext().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
+        firebaseAuth = FirebaseDatabase.getInstance().reference
+         val movie: Result = args.movie
+
+        val view = inflater.inflate(R.layout.fragment_transformation, container, false)
+        val bottomSheet = BottomSheetDialog(requireContext())
+
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.transformationLayout.startTransformWithDelay(200)
+            binding.transformationLayout.startTransform()
+            binding.transformationLayout.bindTargetView(binding.image)
+            Picasso.get().load(IMAGE_URL +movie!!.poster_path).into(binding.image)
+        }, 1000)
+
+
+        //binding data to the view
+        binding.title.text = movie!!.title
+        binding.overview.text = movie!!.overview
+        binding.releaseDate.text = "Realeased on: ${movie!!.release_date}"
+
+        //adding a movie to favorites
+        binding.favs.setOnClickListener{
+            if(pref.getString(USER_NAME, "") == ""){
+                bottomSheet.setContentView(view)
+                bottomSheet.show()
+                //Toast.makeText(requireContext(), "Not logged in", Toast.LENGTH_LONG).show()
+            }else{
+                firebaseAuth.child("favorites")
+                //Toast.makeText(requireContext(), "logged in", Toast.LENGTH_LONG).show()
+
+            }
+
+        }
+
         return binding.root
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        val params = arguments?.getParcelable<TransformationLayout.Params>("TransformationParams")
-        onTransformationEndContainer(params)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-        val poster = arguments?.getParcelable<Result>(posterKey)
-        poster?.let {
-            // [Step2]: sets a transition name to the target view.
-            binding.detailContainer.transitionName = poster.title
+    companion object{
+        @JvmStatic
+        fun newInstance(movie: Result) = MovieFragment().apply{
+            arguments = Bundle().apply {
+                putSerializable(MOVIE, movie)
+            }
         }
-        // Set up the VideoView
-        val videoView: VideoView = binding.movie
-        val videoUri: Uri = Uri.parse("android.resource://" + requireActivity().packageName + "/" + R.raw.movie)
-
-        videoView.setVideoURI(videoUri)
-        videoView.setMediaController(MediaController(requireContext()))
-        videoView.requestFocus()
-        videoView.start()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 
-    companion object {
-        const val TAG = "LibraryFragment"
-        const val posterKey = "posterKey"
-        const val paramsKey = "paramsKey"
-    }
 }
