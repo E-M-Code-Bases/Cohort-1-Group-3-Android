@@ -1,64 +1,39 @@
 package com.example.zozamax_app.fragments
 
-import android.annotation.SuppressLint
+
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.zozamax_app.R
-import com.example.zozamax_app.adapters.MovieAdapter
 import com.example.zozamax_app.databinding.FragmentHomeBinding
-import com.example.zozamax_app.repository.PopularMovieRepo
-import com.example.zozamax_app.viewmodel.PopularModelProvider
-import com.example.zozamax_app.viewmodel.PopularViewModel
 
-private const val TAG = "pppppppo"
+
 class HomeFragment : Fragment() {
 
-    class HomeFragment : Fragment() {
+    private lateinit var binding: FragmentHomeBinding
+
+    override fun  onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        val navHostFragment =
+            childFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment
+
+        binding.navView.bringToFront()
+        binding.navView.setupWithNavController(navHostFragment.navController)
 
 
-        private lateinit var binding: FragmentHomeBinding
-
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            //onTransformationStartContainer()
+        binding.image.setOnClickListener {
+            binding.drawerNav.openDrawer(GravityCompat.START)
         }
 
-        @SuppressLint("SuspiciousIndentation")
-        override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?,
-        ): View {
-
-            binding = FragmentHomeBinding.inflate(inflater, container, false)
-
-            val repo = PopularMovieRepo()
-
-            val productViewModel: PopularViewModel by viewModels {
-                PopularModelProvider(repo)
-            }
-
-            productViewModel.popularMovies.observe(viewLifecycleOwner, Observer { movies ->
-
-                Log.d(TAG, "popular movies -> $movies")
-                if (movies.isNotEmpty()) {
-                    binding.recView.apply {
-                        layoutManager = GridLayoutManager(requireContext(), 2)
-                        adapter = MovieAdapter(movies, R.id.action_homeFragment_to_movieFragment)
-                        setHasFixedSize(true)
-                    }
-                }
-            })
-
-            return binding.root
-        }
+        return binding.root
     }
 }
-;

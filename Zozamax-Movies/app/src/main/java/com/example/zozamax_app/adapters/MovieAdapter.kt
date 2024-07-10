@@ -1,9 +1,11 @@
 package com.example.zozamax_app.adapters
 
 import android.os.Bundle
+import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
@@ -15,7 +17,7 @@ import com.example.zozamax_app.util.IMAGE_URL
 import com.squareup.picasso.Picasso
 
 private const val TAG = "movies"
-class  MovieAdapter(private val movies: List<Result>,private val action: Int): RecyclerView.Adapter<MovieAdapter.MyHolder>() {
+class  MovieAdapter(private val movies:List<Result>): RecyclerView.Adapter<MovieAdapter.MyHolder>() {
     private var layoutType: Int? = null
 
     inner class MyHolder(val binding: ViewBinding): RecyclerView.ViewHolder(binding.root) {
@@ -34,11 +36,7 @@ class  MovieAdapter(private val movies: List<Result>,private val action: Int): R
 
                     binding.root.setOnClickListener {
                         val navCont = binding.root.findNavController()
-                        navCont.navigate(action, bundle)
-                        //homeBinding.drawerNav.visibility = View.GONE
-                        //val movieFragment = MovieFragment.newInstance(model)
-                        //val transaction = manager.beginTransaction().replace(homeBinding.frame.id, movieFragment)
-                        //transaction.commit()
+                        navCont.navigate(R.id.action_movie1Fragment_to_movieFragment, bundle)
 
                     }
                 }
@@ -52,12 +50,9 @@ class  MovieAdapter(private val movies: List<Result>,private val action: Int): R
                         Picasso.get().load(IMAGE_URL + model.poster_path).into(binding.logo)
                     }
                     binding.root.setOnClickListener {
-                        //homeBinding.drawerNav.visibility = View.GONE
-                        //val movieFragment = MovieFragment.newInstance(model)
-                        //val transaction = manager.beginTransaction().replace(homeBinding.frame.id, movieFragment)
-                        //transaction.commit()
                         val navCont = binding.root.findNavController()
-                        navCont.navigate(action, bundle)
+                        navCont.navigate(R.id.action_movie1Fragment_to_movieFragment)
+                        //navCont.navigate(R.id.action_homeFragment_to_movieFragment, bundle)
 
 
                     }
@@ -74,6 +69,7 @@ class  MovieAdapter(private val movies: List<Result>,private val action: Int): R
             MovieRightBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         }
         return MyHolder(binding)
+
     }
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {

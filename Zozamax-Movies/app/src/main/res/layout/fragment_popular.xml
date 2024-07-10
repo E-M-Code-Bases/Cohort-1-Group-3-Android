@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/UpcomingMovies"
+    android:id="@+id/PopularMovies"
     android:layout_height="wrap_content"
-    tools:context=".fragments.TopFragment">
+    tools:context=".fragments.UpcomingFragment">
 
     <TextView
         android:id="@+id/movieTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Top rated Movies"
+        android:text="Popular Movies"
         android:textColor="@color/red"
         android:textStyle="bold"
         android:layout_marginStart="13dp"

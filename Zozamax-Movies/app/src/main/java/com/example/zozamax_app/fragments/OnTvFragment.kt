@@ -6,11 +6,10 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
- import android.view.ViewGroup
+import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.zozamax_app.R
 import com.example.zozamax_app.adapters.MovieAdapter
 import com.example.zozamax_app.databinding.FragmentOnTvBinding
 import com.example.zozamax_app.repository.OnTvMovieRepo
@@ -45,7 +44,7 @@ class OnTvFragment : Fragment() {
                 binding.recView.apply {
 
                     layoutManager = GridLayoutManager(requireContext(), 2)
-                    adapter = MovieAdapter(movies, R.id.action_onTv_to_movieFragment)
+                    adapter = MovieAdapter(movies)
                     setHasFixedSize(true)
                 }
             }

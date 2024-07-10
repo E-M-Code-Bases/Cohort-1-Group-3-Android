@@ -1,4 +1,4 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+ <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
@@ -7,23 +7,28 @@
         <item
             android:id="@+id/onTv"
             android:title="@string/on_tv" />
-
+        <item
+            android:id="@+id/topRated"
+            android:title="@string/top_rated" />
+        <item
+            android:id="@+id/popular"
+            android:title="@string/popular" />
         <item
             android:id="@+id/upcoming"
             android:title="@string/upcoming" />
 
-        <item
-            android:id="@+id/nowplaying"
-            android:title="@string/now_playing" />
-        <item
-            android:id="@+id/favourites"
-            android:title="@string/favourites" />
-        <item
-            android:id="@+id/profile"
-            android:title="@string/profile" />
-        <item
-            android:id="@+id/logout"
-            android:title="@string/logout" />
+                <item
+                    android:id="@+id/nowPlaying"
+                    android:title="@string/now_playing" />
+                <item
+                    android:id="@+id/favourites"
+                    android:title="@string/favourites" />
+                <item
+                    android:id="@+id/profile"
+                    android:title="@string/profile" />
+                <item
+                    android:id="@+id/logout"
+                    android:title="@string/logout" />
 
     </group>
 </menu>

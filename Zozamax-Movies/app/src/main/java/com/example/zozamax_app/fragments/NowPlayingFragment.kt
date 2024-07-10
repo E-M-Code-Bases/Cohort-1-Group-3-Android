@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.zozamax_app.R
 import com.example.zozamax_app.adapters.MovieAdapter
 import com.example.zozamax_app.databinding.FragmentNowplayingBinding
 import com.example.zozamax_app.repository.NowPlayingMovieRepo
@@ -38,7 +37,7 @@ class NowPlayingFragment : Fragment() {
             if (movies.isNotEmpty()) {
                 binding.recView.apply {
                     layoutManager = GridLayoutManager(requireContext(), 2)
-                    adapter = MovieAdapter(movies, R.id.action_upcoming_to_movieFragment)
+                    adapter = MovieAdapter(movies)
                     setHasFixedSize(true)
                 }
             }

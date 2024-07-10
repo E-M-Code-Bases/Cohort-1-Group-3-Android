@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.zozamax_app.R
 import com.example.zozamax_app.adapters.MovieAdapter
 import com.example.zozamax_app.databinding.FragmentTopBinding
 import com.example.zozamax_app.repository.TopMovieRepo
@@ -43,7 +42,7 @@ class TopFragment : Fragment() {
             if (movies.isNotEmpty()) {
                 binding.recView.apply {
                     layoutManager = GridLayoutManager(requireContext(), 2)
-                    adapter = MovieAdapter(movies, R.id.action_upcoming_to_movieFragment)
+                    adapter = MovieAdapter(movies)
                     setHasFixedSize(true)
                 }
             }

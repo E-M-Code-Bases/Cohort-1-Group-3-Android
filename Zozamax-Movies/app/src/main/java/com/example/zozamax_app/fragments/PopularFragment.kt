@@ -11,18 +11,18 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.zozamax_app.adapters.MovieAdapter
-import com.example.zozamax_app.databinding.FragmentUpcomingBinding
-import com.example.zozamax_app.repository.UpcomingMovieRepo
-import com.example.zozamax_app.viewmodel.UpcomingModelProvider
-import com.example.zozamax_app.viewmodel.UpcomingViewModel
+import com.example.zozamax_app.databinding.FragmentPopularBinding
+import com.example.zozamax_app.repository.PopularMovieRepo
+import com.example.zozamax_app.viewmodel.PopularModelProvider
+import com.example.zozamax_app.viewmodel.PopularViewModel
 import com.skydoves.transformationlayout.onTransformationStartContainer
 
-private const val TAG = "upcomingMovies"
+private const val TAG = "popularMovies"
 
-class  UpcomingFragment : Fragment() {
+class  PopularFragment : Fragment() {
 
-    private lateinit var binding: FragmentUpcomingBinding
-    private var _binding: FragmentUpcomingBinding? = null
+    private lateinit var binding: FragmentPopularBinding
+    private var _binding: FragmentPopularBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,16 +36,16 @@ class  UpcomingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = FragmentUpcomingBinding.inflate(inflater, container, false)
+        binding = FragmentPopularBinding.inflate(inflater, container, false)
 
-        val repo = UpcomingMovieRepo()
+        val repo = PopularMovieRepo()
 
-        val productViewModel: UpcomingViewModel by viewModels {
-            UpcomingModelProvider(repo)
-                 }
+        val productViewModel: PopularViewModel by viewModels {
+            PopularModelProvider(repo)
+        }
 
-        productViewModel.upcomingMovies.observe(viewLifecycleOwner, Observer { movies ->
-            Log.d(TAG, "Upcoming movies -> $movies")
+        productViewModel.popularMovies.observe(viewLifecycleOwner, Observer { movies ->
+            Log.d(TAG, "Popular movies -> $movies")
             if(movies.isNotEmpty()){
                 binding.recView.apply {
 
