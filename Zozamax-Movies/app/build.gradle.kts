@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    kotlin("kapt") // Add this line
+    kotlin("kapt")
     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
     id ("kotlin-parcelize")
     id ("androidx.navigation.safeargs.kotlin")
@@ -57,7 +57,7 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
 
-    //glide
+    //glide dependencies
     implementation (libs.glide)
     annotationProcessor (libs.compiler)
 
