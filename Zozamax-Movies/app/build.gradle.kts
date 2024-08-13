@@ -18,7 +18,6 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -58,6 +57,14 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
 
+    //glide
+    implementation (libs.glide)
+    annotationProcessor (libs.compiler)
+
+
+    //youtube player dependencies
+    implementation(dependencyNotation = libs.core)
+
     // Moshi dependencies
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation(libs.androidx.navigation.ui.ktx)
@@ -65,6 +72,9 @@ dependencies {
     // Retrofit dependencies
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation(libs.firebase.database)
+    implementation(libs.androidx.room.compiler)
+    implementation(libs.play.services.dtdi)
+    implementation(libs.support.annotations)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
