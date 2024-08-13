@@ -28,8 +28,6 @@ class HomeFragment : Fragment() {
 
         binding.navView.bringToFront()
         binding.navView.setupWithNavController(navHostFragment.navController)
-
-
         binding.image.setOnClickListener {
             binding.drawerNav.openDrawer(GravityCompat.START)
         }

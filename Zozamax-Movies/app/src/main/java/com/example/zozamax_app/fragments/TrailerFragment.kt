@@ -1,3 +1,4 @@
+/*
 package com.example.zozamax_app.fragments
 
 
@@ -39,3 +40,4 @@ class TrailerFragment : Fragment() {
     }
 }
 
+*/
