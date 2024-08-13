@@ -4,4 +4,5 @@ const val API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5OWNjMTMyZGJhODM0ZTRlNTZlYW
 const val BASE_URL = "https://api.themoviedb.org/3/"
 const val IMAGE_URL = "https://image.tmdb.org/t/p/w500"
 const val USER_NAME = "username"
+const val ACCOUNT_ID = "21334157"
 const val SHARED_PREFS = "shared_preferences"
